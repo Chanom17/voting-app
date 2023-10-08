@@ -68,7 +68,6 @@ class VoterController extends Controller
 
         $voter->name = $request->name;
         $voter->identify_id = $request->identify_id;
-        $voter->voted = $request->voted;
 
         if ($request->birthday) {
             list($day, $month, $year) = explode('/', $request->birthday);

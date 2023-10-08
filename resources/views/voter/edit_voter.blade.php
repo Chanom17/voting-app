@@ -14,7 +14,6 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
@@ -106,8 +105,8 @@
                             <label for="voted" class="col-sm-4 col-form-label">Voted:</label>
                             <div class="col-sm-8">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="voted" id="voted"
-                                        value="1" {{ $voter->voted ? 'checked' : '' }}>
+                                    <input type="checkbox" class="form-check-input" name="voted" value="1"
+                                        @if ($voter->voted) checked @endif>
                                 </div>
                                 <span class="text-danger">
                                     @error('voted')
@@ -116,6 +115,7 @@
                                 </span>
                             </div>
                         </div>
+
 
                         <br>
                         <div class="form-group row">
