@@ -1,0 +1,15 @@
+h1 {
+    font-weight: bolder;
+    font-size: 10vh;
+    color: black;
+    padding: 10px;
+    border: 5px solid black;
+    background-color: skyblue;
+    border-radius: 20px;
+}
+
+.col-md-12 .card-outer {
+    border: 5px solid black;
+    border-radius: 20px;
+    background-color: white;
+}

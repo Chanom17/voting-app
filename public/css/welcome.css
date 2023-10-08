@@ -1,0 +1,34 @@
+.overlay-text {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.overlay-text h1 {
+    font-weight: bolder;
+    font-size: 10vh;
+    color: black;
+    padding: 10px;
+    border: 5px solid black;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.btn-border {
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 3.5px solid black;
+    border-radius: 20px;
+}
+
+/* ในหน้า Admin  */
+.overlay-text p {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px;
+    color: black;
+    border: 3.5px solid black;
+    background-color: red;
+    border-radius: 20px;
+}
