@@ -49,10 +49,15 @@
                         $counter = 1;
                     @endphp
                     @foreach ($candidates as $candidate)
-                        <p>{{ $counter }}. {{ $candidate->name }} - Votes: {{ $candidate->votes }}</p>
-                        @php
-                            $counter++;
-                        @endphp
+                        <div class="border-bottom my-4">
+                            <div class="c-image">
+                                <img src="{{ asset('images') }}/{{ $candidate->image }}">
+                            </div>
+                            <p>{{ $counter }}. {{ $candidate->name }} - Votes: {{ $candidate->votes }}</p>
+                            @php
+                                $counter++;
+                            @endphp
+                        </div>
                     @endforeach
                 </div>
             </div>
