@@ -19,7 +19,7 @@
     <script>
         $(function() {
             $("#datepicker").datepicker({
-                dateFormat: 'dd/mm/yy',
+                // dateFormat: 'dd/mm/yy',
                 changeMonth: true,
                 changeYear: true
             });
@@ -95,7 +95,7 @@
                                 <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                             </div>
                             <span class="text-danger">
-                                @error('birth-day')
+                                @error('birthday')
                                     {{ $message }}
                                 @enderror
                             </span>

@@ -55,3 +55,4 @@ Route::controller(VoterController::class)->group(function () {
 });
 
 Route::get('/result', [ChartController::class, 'resultChart'])->name('chart.show');
+Route::get('/result-pdf', [ChartController::class, 'resultPDF'])->name('request-pdf');

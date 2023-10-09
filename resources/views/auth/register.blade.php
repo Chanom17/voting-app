@@ -14,9 +14,10 @@
     <script>
         $(function() {
             $("#datepicker").datepicker({
-                dateFormat: 'dd/mm/yy',
+                format: 'yyyy-mm-dd',
                 changeMonth: true,
-                changeYear: true
+                changeYear: true,
+                autoclose: true
             });
         });
     </script>
@@ -106,7 +107,7 @@
                                 <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                             </div>
                             <span class="text-danger">
-                                @error('birth-day')
+                                @error('birthday')
                                     {{ $message }}
                                 @enderror
                             </span>
@@ -114,7 +115,7 @@
                         <br>
                         <div class="form-group row">
                             <div class="offset-sm-5 col-sm-7 d-flex align-items-center">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
                             </div>
                         </div>
                         <br>

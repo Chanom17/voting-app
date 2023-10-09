@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Voter;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Carbon\Carbon;
 
 class AuthController extends Controller
 {
@@ -27,9 +28,7 @@ class AuthController extends Controller
         $voter->name = $request->name;
         $voter->identify_id = $request->identify_id;
         $voter->password = $request->password;
-        list($day, $month, $year) = explode('/', $request->birthday);
-        $formatted_birthday = "$year-$month-$day";
-        $voter->birthday = $formatted_birthday;
+        $voter->birthday = $request->birthday;
         $answer = $voter->save();
 
         if ($answer) {
