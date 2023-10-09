@@ -61,22 +61,14 @@ class VoterController extends Controller
         ]);
 
         $voter = Voter::find($request->id);
-
-        if (!$voter) {
-            return back()->with('Fail', 'Voter not found');
-        }
-
         $voter->name = $request->name;
         $voter->identify_id = $request->identify_id;
-
-        if ($request->birthday) {
-            list($day, $month, $year) = explode('/', $request->birthday);
-            $formatted_birthday = "$year-$month-$day";
-            $voter->birthday = $formatted_birthday;
-        }
+        $voter->birthday = $request->birthday;
 
         if (!$request->voted) {
             $voter->voted = false;
+        } else {
+            $voter->voted = true;
         }
 
         $answer = $voter->save();

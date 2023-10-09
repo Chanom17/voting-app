@@ -14,7 +14,7 @@
     <script>
         $(function() {
             $("#datepicker").datepicker({
-                format: 'yyyy-mm-dd',
+                dateFormat: 'yy-mm-dd',
                 changeMonth: true,
                 changeYear: true,
                 autoclose: true
@@ -102,7 +102,7 @@
                         <br>
                         <div class="form-group row">
                             <label for="birthday" class="col-sm-4 col-form-label">Birth Day :</label>
-                            <div class="col-sm-8 d-flex input-group" style="width: 50vh">
+                            <div class="col-sm-8 d-flex input-group" style="width: 200px">
                                 <input type="text" class="form-control" name="birthday" id="datepicker">
                                 <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                             </div>

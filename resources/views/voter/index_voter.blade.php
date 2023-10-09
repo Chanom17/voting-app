@@ -62,7 +62,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $voter->name }}</td>
                                             <td>{{ $voter->identify_id }}</td>
-                                            <td>{{ Carbon\Carbon::parse($voter->birthday)->format('d/m/y') }}</td>
+                                            <td>{{ Carbon\Carbon::parse($voter->birthday)->format('Y-m-d') }}</td>
                                             <td>{{ $voter->voted }}</td>
                                             <td><a href="/edit-voter/{{ $voter->id }}"
                                                     class="btn btn-success">Edit</a></td>

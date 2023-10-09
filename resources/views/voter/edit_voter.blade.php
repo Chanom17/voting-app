@@ -19,9 +19,10 @@
     <script>
         $(function() {
             $("#datepicker").datepicker({
-                // dateFormat: 'dd/mm/yy',
+                dateFormat: 'yy-mm-dd',
                 changeMonth: true,
-                changeYear: true
+                changeYear: true,
+                autoclose: true
             });
         });
     </script>
@@ -89,9 +90,9 @@
                         <br>
                         <div class="form-group row">
                             <label for="birthday" class="col-sm-4 col-form-label">Birth Day :</label>
-                            <div class="col-sm-8 d-flex input-group" style="width: 50vh">
+                            <div class="col-sm-8 d-flex input-group" style="width: 200px">
                                 <input type="text" class="form-control" name="birthday" id="datepicker"
-                                    value="{{ Carbon\Carbon::parse($voter->birthday)->format('d/m/y') }}">
+                                    value="{{ Carbon\Carbon::parse($voter->birthday)->format('Y-m-d') }}">
                                 <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                             </div>
                             <span class="text-danger">
