@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CandidateController;
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\VoterController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,3 +53,5 @@ Route::controller(VoterController::class)->group(function () {
     Route::post('/update-voter/{id}', 'update')->name('voter.update');
     Route::delete('/delete-voter/{id}', 'delete')->name('voter.delete');
 });
+
+Route::get('/result', [ChartController::class, 'resultChart'])->name('chart.show');
