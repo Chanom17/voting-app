@@ -58,7 +58,7 @@ class CandidateController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'image' => 'null|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'party' => 'required',
         ]);
 
