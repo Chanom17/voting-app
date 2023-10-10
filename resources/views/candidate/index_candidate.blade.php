@@ -41,10 +41,12 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
-                <h3 class="text-center">Candidates</h3>
+                <h3 class="text-center mb-4">Candidates</h3>
+                <div class="text-center mb-3">
+                    <a href="{{ url('add-candidate') }}" class="    btn btn-primary">Add Candidate</a>
+                </div>
                 <div class="card">
                     <div class="card-body">
-                        <a href="{{ url('add-candidate') }}" class="btn btn-primary">Add Candidate</a>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>

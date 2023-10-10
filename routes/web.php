@@ -54,5 +54,5 @@ Route::controller(VoterController::class)->group(function () {
     Route::delete('/delete-voter/{id}', 'delete')->name('voter.delete');
 });
 
-Route::get('/result', [ChartController::class, 'resultChart'])->name('chart.show');
+Route::get('/result', [ChartController::class, 'resultChart']); //->name('chart.show')
 Route::get('/result-pdf', [ChartController::class, 'resultPDF'])->name('request-pdf');

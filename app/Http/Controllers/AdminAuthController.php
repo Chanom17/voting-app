@@ -26,10 +26,10 @@ class AdminAuthController extends Controller
                 $request->session()->put('loginAdmin', $admin->id);
                 return redirect('a-dashboard');
             } else {
-                return back()->with('Fail', 'password is not correct.');
+                return back()->with('Fail', 'Password is not correct.');
             }
         } else {
-            return back()->with('Fail', 'username is not wrong.');
+            return back()->with('Fail', 'Username is not correct.');
         }
     }
 

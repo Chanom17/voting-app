@@ -17,7 +17,7 @@ class CheckVoterLogin
     public function handle(Request $request, Closure $next): Response
     {
         if (!Session()->has('loginVoter')) {
-            return redirect('login')->with('Fail', 'you have to login first.');
+            return redirect('login')->with('Fail', 'You have to login first.');
         }
 
         return $next($request);

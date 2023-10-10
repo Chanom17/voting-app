@@ -55,10 +55,10 @@ class AuthController extends Controller
                 $request->session()->put('loginVoter', $voter->id);
                 return redirect('dashboard');
             } else {
-                return back()->with('Fail', 'password is not correct.');
+                return back()->with('Fail', 'Password is not correct.');
             }
         } else {
-            return back()->with('Fail', 'this identify id is not registration.');
+            return back()->with('Fail', 'This name is not registration.');
         }
     }
 

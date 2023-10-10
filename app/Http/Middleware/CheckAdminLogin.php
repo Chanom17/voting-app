@@ -18,9 +18,9 @@ class CheckAdminLogin
     {
         if (!Session()->has('loginAdmin')) {
             if (Session()->has('loginVoter')) {
-                return redirect('dashboard')->with('Fail', 'this is for admin.');
+                return redirect('dashboard')->with('Fail', 'This is for admin.');
             } else {
-                return redirect('a-login')->with('Fail', 'you need to login first.');
+                return redirect('a-login')->with('Fail', 'You need to login first.');
             }
         }
         return $next($request);

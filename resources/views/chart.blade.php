@@ -18,20 +18,45 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a href="{{ url('all-candidate') }}" class="nav-link">Candidate</a></li>
-                    <li class="nav-item"><a href="{{ url('all-voter') }}" class="nav-link">Voter</a></li>
-                    <li class="nav-item"><a href="{{ url('result') }}" class="nav-link">Result</a></li>
-                </ul>
-            </div>
+            @if (session('loginAdmin'))
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a href="{{ url('all-candidate') }}" class="nav-link">Candidate</a></li>
+                        <li class="nav-item"><a href="{{ url('all-voter') }}" class="nav-link">Voter</a></li>
+                        <li class="nav-item"><a href="{{ url('result') }}" class="nav-link">Result</a></li>
+                    </ul>
+                </div>
+            @endif
 
-            <div class="dropdown">
-                <a href="#" class="dropdown-toggle text-decoration-none" data-bs-toggle="dropdown">admin</a>
-                <ul class="dropdown-menu">
-                    <li><a href="{{ url('a-logout') }}" class="dropdown-item">Logout</a></li>
-                </ul>
-            </div>
+            @if (session('loginVoter'))
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle text-decoration-none" data-bs-toggle="dropdown">
+                        {{ $voter->name }}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url('logout') }}" class="dropdown-item">Logout</a></li>
+                    </ul>
+                </div>
+            @elseif (session('loginAdmin'))
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle text-decoration-none" data-bs-toggle="dropdown">
+                        admin
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url('a-logout') }}" class="dropdown-item">Logout</a></li>
+                    </ul>
+                </div>
+            @else
+                <div class="dropdown ms-auto me-2">
+                    <a href="#" class="btn btn-outline-primary dropdown-toggle"
+                        data-bs-toggle="dropdown">Login</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url('login') }}" class="dropdown-item">Voter Login</a></li>
+                        <li><a href="{{ url('a-login') }}" class="dropdown-item">Admin Login</a></li>
+                    </ul>
+                </div>
+                <a href="{{ url('register') }}" class="btn btn-primary">Sign-up</a>
+            @endif
         </div>
     </nav>
 

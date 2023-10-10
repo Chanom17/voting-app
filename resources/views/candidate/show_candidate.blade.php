@@ -41,7 +41,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="table-relative text-center">
-                            <h3 class="text-center">Candidates</h3>
+                            <h3 class="text-center">Candidate</h3>
                             <p class="card-title my-4">
                                 <img src="{{ asset('images') }}/{{ $candidate->image }}" alt="image">
                             </p>
