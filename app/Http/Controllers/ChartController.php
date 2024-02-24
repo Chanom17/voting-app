@@ -24,6 +24,6 @@ class ChartController extends Controller
     {
         $candidates = Candidate::orderBy('votes', 'desc')->get();
         $pdf = PDF::loadView('pdf.result', compact('candidates'));
-        return $pdf->download('result.pdf');
+        return $pdf->stream();
     }
 }

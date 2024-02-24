@@ -75,7 +75,7 @@
                     @endphp
                     @foreach ($candidates as $candidate)
                         <div class="border-bottom my-4">
-                            <div class="c-image">
+                            <div class="c-image mb-2">
                                 <img src="{{ asset('images') }}/{{ $candidate->image }}">
                             </div>
                             <p>{{ $counter }}. {{ $candidate->name }} - Votes: {{ $candidate->votes }}</p>

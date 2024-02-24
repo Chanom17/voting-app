@@ -44,12 +44,12 @@
                             {{ session('Error') }}
                         </div>
                     @endif
-                    <div class="row row-cols-1 row-cols-md-4 g-4">
+                    <div class="row row-cols-1 row-cols-md-2 g-6">
                         @foreach ($candidates as $candidate)
                             <div class="col">
-                                <div class="card" style="width: 18rem;">
+                                <div class="card mx-auto mb-4" style="width: 27rem;">
                                     <img src="{{ asset('images/' . $candidate->image) }}" class="card-img-top mx-auto"
-                                        style="max-width: 18rem; height: 300px; object-fit: cover;">
+                                        style="max-width: 27rem; height: 300px; object-fit: cover;">
                                     <div class="card-body text-center">
                                         <h5 class="card-title">{{ $candidate->name }}</h5>
                                         <p class="card-text">{{ $candidate->party }}</p>

@@ -11,9 +11,9 @@ p {
 }
 
 .c-image img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    width: 24rem;
+    height: 16rem;
+    /* border-radius: 50%; */
     object-fit: cover;
     /* border: 3.5px solid black; */
 }
