@@ -17,7 +17,7 @@ class ChartController extends Controller
             $voter = Voter::where('id', '=', Session::get('loginVoter'))->first();
         }
         $candidates = Candidate::orderBy('votes', 'desc')->get();
-        return view('chart', compact('candidates','voter'));
+        return view('chart', compact('candidates', 'voter'));
     }
 
     public function resultPDF()
@@ -26,4 +26,5 @@ class ChartController extends Controller
         $pdf = PDF::loadView('pdf.result', compact('candidates'));
         return $pdf->stream();
     }
+
 }

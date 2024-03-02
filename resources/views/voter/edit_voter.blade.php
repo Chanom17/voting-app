@@ -39,6 +39,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a href="/" class="nav-link">Dashboard</a></li>
                     <li class="nav-item"><a href="{{ url('all-candidate') }}" class="nav-link">Candidate</a></li>
                     <li class="nav-item"><a href="{{ url('all-voter') }}" class="nav-link">Voter</a></li>
                     <li class="nav-item"><a href="{{ url('result') }}" class="nav-link">Result</a></li>

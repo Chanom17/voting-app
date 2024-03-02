@@ -21,6 +21,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a href="/" class="nav-link">Dashboard</a></li>
                     <li class="nav-item"><a href="{{ url('all-candidate') }}" class="nav-link">Candidate</a></li>
                     <li class="nav-item"><a href="{{ url('all-voter') }}" class="nav-link">Voter</a></li>
                     <li class="nav-item"><a href="{{ url('result') }}" class="nav-link">Result</a></li>
@@ -37,7 +38,7 @@
         </div>
     </nav>
 
-    <div class="centainer bg-white" style="height: 686px;">
+    <div class="centainer bg-white mx-auto" style="height: 686px; width: 1400px">
         <div class="row">
             <div class="col-md-6 d-flex flex-column align-items-center">
                 <div class="card-con d-flex flex-row" style="margin-left: 150px">

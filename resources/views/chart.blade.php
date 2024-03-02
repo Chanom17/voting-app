@@ -21,6 +21,7 @@
             @if (session('loginAdmin'))
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a href="/" class="nav-link">Dashboard</a></li>
                         <li class="nav-item"><a href="{{ url('all-candidate') }}" class="nav-link">Candidate</a></li>
                         <li class="nav-item"><a href="{{ url('all-voter') }}" class="nav-link">Voter</a></li>
                         <li class="nav-item"><a href="{{ url('result') }}" class="nav-link">Result</a></li>
@@ -89,6 +90,8 @@
         </div>
         <br>
         <a href="{{ route('request-pdf') }}" class="btn btn-primary mb-3">Export PDF Result</a>
+        <a id="download-chart" href="#" class="btn btn-success mb-3">Download Chart</a>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -123,6 +126,30 @@
                     }
                 }
             });
+        });
+
+        document.getElementById('download-chart').addEventListener('click', function() {
+            var chartCanvas = document.getElementById('votesChart');
+            var chartImage = chartCanvas.toDataURL("image/jpeg", 1.0);
+
+            // Create a temporary canvas to draw the chart with a white background
+            var tempCanvas = document.createElement('canvas');
+            tempCanvas.width = chartCanvas.width;
+            tempCanvas.height = chartCanvas.height;
+            var tempCtx = tempCanvas.getContext('2d');
+            tempCtx.fillStyle = '#ffffff'; // White background color
+            tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+            tempCtx.drawImage(chartCanvas, 0, 0);
+
+            // Convert the temporary canvas to a data URL
+            var chartImageWithWhiteBackground = tempCanvas.toDataURL("image/jpeg", 1.0);
+
+            var downloadLink = document.createElement('a');
+            downloadLink.href = chartImageWithWhiteBackground;
+            downloadLink.download = 'chart.jpg';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
         });
     </script>
 
