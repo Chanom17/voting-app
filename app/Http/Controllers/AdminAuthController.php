@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Voter;
+use App\Models\Candidate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -39,7 +41,11 @@ class AdminAuthController extends Controller
         if (Session::has('loginAdmin')) {
             $admin = Admin::where('id', '=', Session::get('loginAdmin'))->first();
         }
-        return view('admin_dashboard', compact('admin'));
+        $voters = Voter::orderBy('voted', 'desc')->get();
+        $candidates = Candidate::orderBy('votes', 'desc')->get();
+        $latestVoters = Voter::orderByDesc('updated_at')->take(3)->get();
+        $HighestCan = Candidate::orderByDesc('votes')->take(3)->get();
+        return view('admin_dashboard', compact('admin','voters','candidates','latestVoters','HighestCan'));
     }
 
     public function adminLogout()
