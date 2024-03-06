@@ -43,7 +43,8 @@ class AdminAuthController extends Controller
         }
         $voters = Voter::orderBy('voted', 'desc')->get();
         $candidates = Candidate::orderBy('votes', 'desc')->get();
-        $latestVoters = Voter::orderByDesc('updated_at')->take(3)->get();
+        $latestVoters = Voter::where('voted', '=', 1)->orderByDesc('updated_at')->take(3)->get();
+        // Voter::orderByDesc('updated_at')->take(3)->get();
         $HighestCan = Candidate::orderByDesc('votes')->take(3)->get();
         return view('admin_dashboard', compact('admin','voters','candidates','latestVoters','HighestCan'));
     }
